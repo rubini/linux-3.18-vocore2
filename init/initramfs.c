@@ -497,6 +497,7 @@ static char * __init unpack_to_rootfs(char *buf, unsigned long len)
 			error("junk in compressed archive");
 		if (state != Reset)
 			error("junk in compressed archive");
+		break; /* so we can use a bigger initrd size in the cmdline */
 		this_header = saved_offset + my_inptr;
 		buf += my_inptr;
 		len -= my_inptr;
