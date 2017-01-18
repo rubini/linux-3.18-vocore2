@@ -25,7 +25,7 @@ cflags-$(CONFIG_SOC_RT3883)	+= -I$(srctree)/arch/mips/include/asm/mach-ralink/rt
 #
 # Ralink MT7620
 #
-load-$(CONFIG_SOC_MT7620)	+= 0xffffffff80000000
+load-$(CONFIG_SOC_MT7620)	+= 0x80000000
 cflags-$(CONFIG_SOC_MT7620)	+= -I$(srctree)/arch/mips/include/asm/mach-ralink/mt7620
 
 # Ralink MT7621
