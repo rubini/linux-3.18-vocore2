@@ -437,6 +437,7 @@ config PMC_MSP
 
 config RALINK
 	bool "Ralink based machines"
+	select BUILTIN_DTB
 	select CEVT_R4K
 	select CSRC_R4K
 	select BOOT_RAW
