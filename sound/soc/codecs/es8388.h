@@ -1,0 +1,40 @@
+#ifndef _ES8388_H
+#define _ES8388_H
+
+#define ES8388_CTRL1 0x00
+#define ES8388_CTRL1_VMIDSEL_OFF (0 << 0)
+#define ES8388_CTRL1_VMIDSEL_50k (1 << 0)
+#define ES8388_CTRL1_VMIDSEL_500k (2 << 0)
+#define ES8388_CTRL1_VMIDSEL_5k (3 << 0)
+#define ES8388_CTRL1_VMIDSEL_MASK (7 << 0)
+#define ES8388_CTRL1_ENREF (1 << 2)
+#define ES8388_CTRL1_SEQEN (1 << 3)
+#define ES8388_CTRL1_SAMEFS (1 << 4)
+#define ES8388_CTRL1_DACMCLK_ADC (0 << 5)
+#define ES8388_CTRL1_DACMCLK_DAC (1 << 5)
+#define ES8388_CTRL1_LRCM (1 << 6)
+#define ES8388_CTRL1_SCP_RESET (1 << 7)
+
+#define ES8388_ADC4 0x0c
+#define ES8388_ADC4_WL_MASK (7 << 2)
+#define ES8388_ADC4_WL_24BIT (0 << 2)
+#define ES8388_ADC4_WL_20BIT (1 << 2)
+#define ES8388_ADC4_WL_18BIT (2 << 2)
+#define ES8388_ADC4_WL_16BIT (3 << 2)
+#define ES8388_ADC4_WL_32BIT (4 << 2)
+
+
+#define ES8388_CTRL3 0x19
+#define ES8388_CTRL3_DACMUTE (1 << 2)
+
+/* L/ROUT1/2 volume */
+#define ES8388_LOUT1VOL 0x2e
+#define ES8388_ROUT1VOL 0x2f
+#define ES8388_LOUT2VOL 0x30
+#define ES8388_ROUT2VOL 0x31
+#define ES8388_OUTVOL_MASK (0 << 5)
+#define ES8388_OUTVOL_MAX 0x21
+
+#define ES8388_REG_MAX 0x32
+
+#endif
