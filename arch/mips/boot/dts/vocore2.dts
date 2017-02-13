@@ -79,8 +79,8 @@
 				m25p,chunked-io = <32>;
 
 				partition@0 {
-					label = "other-u-boot";
-					reg = <0x0 0x40000>;
+					label = "flash-cs1";
+					reg = <0x0 0x2000000>;
 				};
 
 			};
