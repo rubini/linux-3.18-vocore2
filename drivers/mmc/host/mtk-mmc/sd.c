@@ -52,6 +52,7 @@
 #include <linux/mmc/sd.h>
 #include <linux/mmc/sdio.h>
 #include <linux/dma-mapping.h>
+#include <asm/cacheflush.h>
 
 /* +++ by chhung */
 #include <linux/types.h>
@@ -1235,9 +1236,13 @@ static int msdc_pio_read(struct msdc_host *host, struct mmc_data *data)
                 goto end; 	
             }
         }
+	flush_dcache_page(sg_page(sg)); /* This has no effect, it seems */
         size += sg_dma_len(sg);
         sg = sg_next(sg); num--;
     }
+    /* The above page-level flush doesn't work, so flush all at the end */
+    __flush_cache_all();
+
 end:
     data->bytes_xfered += size;
     N_MSG(FIO, "        PIO Read<%d>bytes", size);
